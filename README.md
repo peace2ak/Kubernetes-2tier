@@ -9,27 +9,29 @@ This repository demonstrates the deployment of a web application using Minikube 
 
 ### Deployment Steps
 
-1. Start Minikube:
+1. Start Minikube and Enable the NGINX Ingress controller:
         
     `minikube start`
+    `minikube addons enable ingress`
+   
     
-2. Apply the Kubernetes Deployment:
+3. Apply the Kubernetes Deployment:
         
     `kubectl apply -f web-app.yaml`
     
-3. Expose the Deployment using NodePort:
+4. Expose the Deployment using NodePort:
         
     `kubectl expose deployment web-app --type=NodePort --port=80`
     
-4. Apply the Ingress configuration:
+5. Apply the Ingress configuration:
         
     `kubectl apply -f web-ingress.yaml`
     
-5. Get Minikube IP:
+6. Get Minikube IP:
         
     `minikube ip`
     
-6. Update the hosts file:
+7. Update the hosts file:
     
     - On Linux/Mac:
                 
@@ -39,7 +41,7 @@ This repository demonstrates the deployment of a web application using Minikube 
                 
         `Add-Content C:\Windows\System32\drivers\etc\hosts "<minikube-ip> webapp.local"`
         
-7. Access the application:
+8. Access the application:
     
     - Using curl:
                 
