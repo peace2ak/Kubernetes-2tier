@@ -11,8 +11,12 @@ This repository demonstrates the deployment of a web application using Minikube 
 
 1. Start Minikube and Enable the NGINX Ingress controller:
         
-    `minikube start`
-    `minikube addons enable ingress`
+    ```shell
+   minikube start
+    ```
+    ```shell
+   minikube addons enable ingress
+    ```
    
     
 3. Apply the Kubernetes Deployment:
