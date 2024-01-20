@@ -13,35 +13,35 @@ This repository exemplifies the deployment of a web application using Minikube a
     
     
     
-    `minikube start`
+    ```minikube start```
     
     
     
-    `minikube addons enable ingress`
+    ```minikube addons enable ingress```
     
 2. Apply the Kubernetes Deployment:
     
     
     
-    `kubectl apply -f web-app.yaml`
+    ```kubectl apply -f web-app.yaml```
     
 3. Expose the Deployment using NodePort:
     
     
     
-    `kubectl expose deployment web-app --type=NodePort --port=80`
+    ```kubectl expose deployment web-app --type=NodePort --port=80```
     
 4. Apply the Ingress configuration:
     
     
     
-    `kubectl apply -f web-ingress.yaml`
+    ```kubectl apply -f web-ingress.yaml```
     
 5. Get Minikube IP:
     
     
     
-    `minikube ip`
+    ```minikube ip```
     
 6. Update the hosts file:
     
@@ -49,13 +49,13 @@ This repository exemplifies the deployment of a web application using Minikube a
         
         
         
-        `echo "<minikube-ip> webapp.local" | sudo tee -a /etc/hosts`
+        ```echo "<minikube-ip> webapp.local" | sudo tee -a /etc/hosts```
         
     - On Windows (Run as Administrator):
         
         
         
-        `Add-Content C:\Windows\System32\drivers\etc\hosts "<minikube-ip> webapp.local"`
+        ```Add-Content C:\Windows\System32\drivers\etc\hosts "<minikube-ip> webapp.local"```
         
 7. Access the application:
     
@@ -63,13 +63,13 @@ This repository exemplifies the deployment of a web application using Minikube a
         
         
         
-        `curl http://webapp.local`
+        ```curl http://webapp.local```
         
     - or open in a web browser:
         
         
         
-        `http://webapp.local`
+        ```http://webapp.local```
         
 
 ### Cleanup
@@ -78,12 +78,12 @@ Delete the resources when done:
 
 
 
-`kubectl delete ingress,service,deployment web-app`
+```kubectl delete ingress,service,deployment web-app```
 
 Stop Minikube:
 
 
 
-`minikube stop`
+```minikube stop```
 
 Feel free to modify and enhance the deployment configurations based on your requirements.
